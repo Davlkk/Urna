@@ -1,0 +1,104 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+.urna{
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    margin: auto;
+
+    display: inherit;
+    align-items: center;
+    
+    width: 150vh;
+    height: 80vh;
+    border-radius: 25px;
+    
+    background-color: #B3B3B3;
+    box-shadow: 10px 10px 30px rgb(80, 80, 80);
+    
+    .tela{     
+        width: 80vh;
+        height: 60vh;    
+        margin: 7%;
+        border-radius: 20px;
+
+        display: inherit;
+        align-items: center;
+        justify-content: center;
+
+        background-color: rgb(38, 38, 38);
+
+        .tela2{
+            width: 70vh;
+            height: 50vh;    
+            border-radius: 15px;
+    
+            background-color: #ffffff;
+        }
+    }
+
+    .botoes{
+        display: grid;
+        justify-content: center;
+    }
+    .botoes-nmr{
+        display: grid;
+        grid-template-rows: auto auto auto auto;
+        grid-template-columns: auto auto auto;
+        margin-left: 2%;
+        gap: 10px;
+        
+        .nmr{
+            width: 10vh;
+            height: 5vh;
+
+            background-color: rgb(38, 38, 38);
+            border-radius: 5px;
+            
+            color: white;
+            font-size: 25px;
+        }
+    }
+
+    .botoes-confirma{
+        display: grid;
+        align-items: center;
+        grid-template-rows: auto;
+        grid-template-columns: auto auto auto;
+        margin-left: 2%;
+        gap: 10px;
+
+        .botao{
+            margin-top: 20%;
+            border-style: none;
+            border-radius: 5px;
+            
+            height: 5vh;
+            width: 10vh;
+        }
+
+        .branco{
+            background-color: white;
+            box-shadow: 3px 3px 1px rgb(141, 140, 140);
+        }
+        .corrige{
+            background-color: rgb(255, 0, 0);
+            box-shadow: 3px 3px 1px rgb(157, 0, 0);
+        }
+        .confirma{
+            background-color: rgb(98, 255, 0);
+            box-shadow: 3px 3px 1px rgb(67, 172, 2);
+        }
+    }
+}

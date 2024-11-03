@@ -6,8 +6,7 @@
 }
 
 body{
-    background-color: rgb(27, 22, 40);
-    color: white;
+    background-color:  rgb(238, 238, 238);
 }
 
 main{
@@ -21,6 +20,7 @@ main{
     }
 
     .container-candidatos{
+        color: white;
         display: grid;
         grid-template-columns: auto auto auto;
         grid-template-rows: auto auto auto;
@@ -39,7 +39,7 @@ main{
         align-items: center;
         width: 50vh;
         height: 25vh;
-        background-color: rgb(47, 237, 47);
+        background-color:  rgb(9, 0, 107);
         border-radius: 10px;
 
         .foto{
@@ -94,7 +94,7 @@ main{
         width: 30vh;
         height: 8vh;
 
-        background-color: rgb(47, 237, 47);
+        background-color: rgb(9, 0, 107);
 
         font-weight: 600;
         color: aliceblue;
@@ -112,7 +112,7 @@ main{
         left: -100%;
         width: 100%;
         height: 100%;
-        background-color: #0d6605;
+        background-color: rgb(48, 39, 140);
         transition: left 0.4s ease;
     }
 

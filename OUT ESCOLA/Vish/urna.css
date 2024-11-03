@@ -5,7 +5,7 @@
 }
 
 body{
-    background-color: rgb(27, 22, 40);
+    background-color: rgb(238, 238, 238);
 }
 
 main{
@@ -28,7 +28,7 @@ main{
     border-radius: 25px;
     
     background-color: #B3B3B3;
-    box-shadow: 10px 10px 30px rgb(12, 96, 3);
+    box-shadow: 10px 10px 25px 5px rgba(0, 0, 0, 0.426);
     
     .tela{     
         width: 80vh;

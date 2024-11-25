@@ -209,8 +209,6 @@ main{
     
     main{
         height: 100vh;
-        border: black solid;
-
     }
     .urna {
         width: 80vw;

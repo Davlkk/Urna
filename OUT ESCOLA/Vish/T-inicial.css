@@ -42,7 +42,13 @@ main{
     .baixo{
         font-size: 20px;
 
+        .info{
+            font-size: 15px;
+            text-decoration: none;
+        }
+
        .botao{
+            margin-bottom: 1%;
             position: relative;
             display: inline-block;
 

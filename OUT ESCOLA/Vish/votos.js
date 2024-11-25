@@ -1,26 +1,57 @@
 const candidatos = {
     "1212": "Líder: Andriel Ligeirinho; Vice: Rafaustão",
-    "5141": "Líder: André Shuh Passeios; Vice: Leite",
+    "5141": "Líder: André Schuh Passeios; Vice: Leite",
     "2469": "Líder: Heipac; Vice: Davi Bizkit",
     "2344": "Líder: Wellinton Bochecha; Vice: Sapo Paulo",
     "3141": "Líder: Pagé Tabajara; Vice: O Ganado",
     "1945": "Líder: Vitor Alemon Potato; Vice: Argentino"
 };
 
+const regentes = {
+    "010": "Regente: Helder",
+    "192": "Regente: Cândido",
+    "246": "Regente: Cabral Joga",
+    "666": "Regente: Kingnaldo",
+    "212": "Regente: Mago Davy Jones",
+    "269": "Regente: Painato"
+};
 
 function exibirResultados() {
     const resultadosDiv = document.getElementById('resultados');
-    const votos = JSON.parse(localStorage.getItem('votos'));
+    const votos = JSON.parse(localStorage.getItem('votos')) || {};
+    const votosRegentes = JSON.parse(localStorage.getItem('votosRegentes')) || {};
 
-
-    let resultadosHTML = '';
+    // Exibindo os candidatos
+    let resultadosHTML = '<h2>Candidatos</h2>';
     for (let numero in candidatos) {
-        resultadosHTML += `<br><strong>${candidatos[numero]}</strong> - Número: ${numero} - Votos: ${votos[numero]}</li>`;
+        resultadosHTML += `<p><strong>${candidatos[numero]}</strong> - Número: ${numero} - Votos: ${votos[numero] || 0}</p>`;
     }
-    resultadosHTML += '</ul>';
+
+    // Exibindo os regentes
+    resultadosHTML += '<h2>Regentes</h2>';
+    for (let numero in regentes) {
+        resultadosHTML += `<p><strong>${regentes[numero]}</strong> - Código: ${numero} - Votos: ${votosRegentes[numero] || 0}</p>`;
+    }
 
     resultadosDiv.innerHTML = resultadosHTML;
 }
 
+function resetarVotos() {
+    // Remove os votos do localStorage
+    localStorage.removeItem('votos');
+    localStorage.removeItem('votosRegentes');
 
-document.addEventListener('DOMContentLoaded', exibirResultados);
+    // Atualiza a exibição
+    exibirResultados();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Exibe os resultados iniciais
+    exibirResultados();
+
+    // Adiciona o evento de clique ao botão de reset
+    const resetButton = document.querySelector('.reset');
+    if (resetButton) {
+        resetButton.addEventListener('click', resetarVotos);
+    }
+});

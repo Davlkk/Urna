@@ -15,6 +15,15 @@ const candidatos = {
     "1945": "Líder: Vitor Alemon Potato; Vice: Argentino"
 };
 
+const regentes = {
+    "010": "Regente: Helder",
+    "192": "Regente: Cândido",
+    "246": "Regente: Cabral Joga",
+    "666": "Regente: Kingnaldo",
+    "212": "Regente: Mago Davy Jones",
+    "269": "Regente: Painato"
+};
+
 // Inicializa os votos no localStorage, se ainda não estiverem definidos
 if (!localStorage.getItem('votos')) {
     const votosIniciais = {};
@@ -22,6 +31,14 @@ if (!localStorage.getItem('votos')) {
         votosIniciais[num] = 0; // Define os votos iniciais para cada candidato
     }
     localStorage.setItem('votos', JSON.stringify(votosIniciais));
+}
+
+if (!localStorage.getItem('votosRegentes')) {
+    const votosRegentesIniciais = {};
+    for (let num in regentes) {
+        votosRegentesIniciais[num] = 0; // Define os votos iniciais para cada regente
+    }
+    localStorage.setItem('votosRegentes', JSON.stringify(votosRegentesIniciais));
 }
 
 botoes.forEach(nmr => {
@@ -43,16 +60,25 @@ function confirmarVoto() {
     if (candidatos[numero]) {
         mensagemDiv.innerHTML = `<p>VOTO CONFIRMADO EM:</p><p>${candidatos[numero]}</p>`;
         SomConfirma.play(); // Toca o som de confirmação
-        registrarVoto(numero); // Armazena o voto
+        registrarVoto(numero, 'candidato'); // Armazena o voto no grupo de candidatos
+    } else if (regentes[numero]) {
+        mensagemDiv.innerHTML = `<p>VOTO CONFIRMADO EM:</p><p>${regentes[numero]}</p>`;
+        SomConfirma.play(); // Toca o som de confirmação
+        registrarVoto(numero, 'regente'); // Armazena o voto no grupo de regentes
     } else {
         mensagemDiv.innerHTML = "<p>Número inválido. Tente novamente.</p>";
     }
 }
 
 // Função para registrar o voto no localStorage
-function registrarVoto(numero) {
-    // Pega os votos atuais, incrementa o voto para o candidato e salva de volta
-    const votos = JSON.parse(localStorage.getItem('votos'));
-    votos[numero] += 1;
-    localStorage.setItem('votos', JSON.stringify(votos));
+function registrarVoto(numero, tipo) {
+    if (tipo === 'candidato') {
+        const votos = JSON.parse(localStorage.getItem('votos'));
+        votos[numero] += 1;
+        localStorage.setItem('votos', JSON.stringify(votos));
+    } else if (tipo === 'regente') {
+        const votosRegentes = JSON.parse(localStorage.getItem('votosRegentes'));
+        votosRegentes[numero] += 1;
+        localStorage.setItem('votosRegentes', JSON.stringify(votosRegentes));
+    }
 }

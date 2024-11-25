@@ -120,3 +120,19 @@ main{
         left: 0;
     }
 }
+
+@media only screen and (max-width: 800px) {
+    main{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        border: solid black;
+        height: 95vh;
+    }
+    .container-candidatos{
+        display: flex;
+        flex-wrap: nowrap;
+        
+    }
+    
+}

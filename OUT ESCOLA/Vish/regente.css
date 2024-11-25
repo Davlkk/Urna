@@ -120,3 +120,16 @@ main{
         left: 0;
     }
 }
+
+@media only screen and (max-width: 800px) {
+    main{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .container-candidatos{
+        display: flex;
+        flex-wrap: wrap;
+        
+    }
+    
+}

@@ -61,3 +61,11 @@ main{
     left: 0;
 }
 
+@media only screen and (max-width: 800px){
+    main{
+        padding: 5%;
+    }
+    hr{
+        display: none;
+    }
+}

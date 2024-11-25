@@ -24,6 +24,11 @@ const regentes = {
     "269": "Regente: Painato"
 };
 
+document.getElementById("myButton").addEventListener("click"), function emBranco() {
+    const resultElement = document.getElementById("result");
+    resultElement.textContent = "";
+}
+
 if (!localStorage.getItem('votos')) {
     const votosIniciais = {};
     for (let num in candidatos) {
@@ -35,7 +40,7 @@ if (!localStorage.getItem('votos')) {
 if (!localStorage.getItem('votosRegentes')) {
     const votosRegentesIniciais = {};
     for (let num in regentes) {
-        votosRegentesIniciais[num] = 0; // Define os votos iniciais
+        votosRegentesIniciais[num] = 0;
     }
     localStorage.setItem('votosRegentes', JSON.stringify(votosRegentesIniciais));
 }

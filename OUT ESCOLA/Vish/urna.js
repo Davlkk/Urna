@@ -24,11 +24,10 @@ const regentes = {
     "269": "Regente: Painato"
 };
 
-// Inicializa os votos no localStorage, se ainda não estiverem definidos
 if (!localStorage.getItem('votos')) {
     const votosIniciais = {};
     for (let num in candidatos) {
-        votosIniciais[num] = 0; // Define os votos iniciais para cada candidato
+        votosIniciais[num] = 0; // Define os votos iniciais
     }
     localStorage.setItem('votos', JSON.stringify(votosIniciais));
 }
@@ -36,7 +35,7 @@ if (!localStorage.getItem('votos')) {
 if (!localStorage.getItem('votosRegentes')) {
     const votosRegentesIniciais = {};
     for (let num in regentes) {
-        votosRegentesIniciais[num] = 0; // Define os votos iniciais para cada regente
+        votosRegentesIniciais[num] = 0; // Define os votos iniciais
     }
     localStorage.setItem('votosRegentes', JSON.stringify(votosRegentesIniciais));
 }
@@ -48,23 +47,23 @@ botoes.forEach(nmr => {
     });
 });
 
-// Limpa o campo de texto ao clicar no botão CORRIGE
+// limpa a tela (botão "corrige")
 botaoCorrige.addEventListener('click', () => {
     LocalTexto.value = '';
     mensagemDiv.innerHTML = ''; // Limpa a mensagem ao corrigir
 });
 
-// Função para confirmar o voto e exibir a mensagem
+// Função para confirmar o voto
 function confirmarVoto() {
     const numero = LocalTexto.value.trim();
     if (candidatos[numero]) {
         mensagemDiv.innerHTML = `<p>VOTO CONFIRMADO EM:</p><p>${candidatos[numero]}</p>`;
-        SomConfirma.play(); // Toca o som de confirmação
-        registrarVoto(numero, 'candidato'); // Armazena o voto no grupo de candidatos
+        SomConfirma.play(); // Toca o som "piriririririri"
+        registrarVoto(numero, 'candidato'); // Armazena o voto em "candidatos"
     } else if (regentes[numero]) {
         mensagemDiv.innerHTML = `<p>VOTO CONFIRMADO EM:</p><p>${regentes[numero]}</p>`;
         SomConfirma.play(); // Toca o som de confirmação
-        registrarVoto(numero, 'regente'); // Armazena o voto no grupo de regentes
+        registrarVoto(numero, 'regente'); // Armazena o voto em "regentes"
     } else {
         mensagemDiv.innerHTML = "<p>Número inválido. Tente novamente.</p>";
     }

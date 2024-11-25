@@ -21,13 +21,11 @@ function exibirResultados() {
     const votos = JSON.parse(localStorage.getItem('votos')) || {};
     const votosRegentes = JSON.parse(localStorage.getItem('votosRegentes')) || {};
 
-    // Exibindo os candidatos
     let resultadosHTML = '<h2>Candidatos</h2>';
     for (let numero in candidatos) {
         resultadosHTML += `<p><strong>${candidatos[numero]}</strong> - Número: ${numero} - Votos: ${votos[numero] || 0}</p>`;
     }
 
-    // Exibindo os regentes
     resultadosHTML += '<h2>Regentes</h2>';
     for (let numero in regentes) {
         resultadosHTML += `<p><strong>${regentes[numero]}</strong> - Código: ${numero} - Votos: ${votosRegentes[numero] || 0}</p>`;
@@ -36,8 +34,7 @@ function exibirResultados() {
     resultadosDiv.innerHTML = resultadosHTML;
 }
 
-function resetarVotos() {
-    // Remove os votos do localStorage
+function resetarVotos() {    // Remove os votos
     localStorage.removeItem('votos');
     localStorage.removeItem('votosRegentes');
 
@@ -46,10 +43,8 @@ function resetarVotos() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Exibe os resultados iniciais
     exibirResultados();
 
-    // Adiciona o evento de clique ao botão de reset
     const resetButton = document.querySelector('.reset');
     if (resetButton) {
         resetButton.addEventListener('click', resetarVotos);

@@ -35,7 +35,9 @@ main{
             margin-top: 2%;
         }
         #line{
+            margin-top: 1%;
             color: rgb(9, 0, 107);
+            width: 75vw;
         }
     }
 
@@ -92,49 +94,52 @@ main{
     main{
         display: flex;
         flex-wrap: wrap;
-    }
-    .bloco {
-        height: auto; 
-        overflow: hidden;
 
-        video{
-            width: 70vh;
+        .bloco {
+            height: auto; 
+            overflow: hidden;
+    
+            video{
+                width: 70vh;
+            }
         }
-    }
 
-    .container {
-        width: 100vw;
-        height: 100vh;
-        align-items: center;
-    }
+        .container {
+            width: 100vw;
+            height: 100vh;
+            align-items: center;
 
-    .textos {
-        width: 90vw;
 
-        align-items: center;
-        h1{
-            font-size: 40px;
+            .textos {
+                margin-right: 5%;
+                align-items: center;
+                
+                h1{
+                    font-size: 40px;
+                }
+                #text {
+                    font-size: 15px;
+                }
+                #line{
+                    width: 90vw;
+                }
+            }
+
+            .baixo {
+                font-size: 16px;
+                text-align: center;
+                margin-right: 5%;
+                
+                .info {
+                    font-size: 14px;
+                }
+        
+                .botao {
+                    width: 90%;
+                    height: 8vh; 
+                    font-size: 16px;
+                }
+            }
         }
-        #text {
-            font-size: 14px;
-        }
-        #line{
-            display: none;
-        }
-    }
-
-    .baixo {
-        font-size: 16px;
-        text-align: center;
-    }
-
-    .info {
-        font-size: 14px;
-    }
-
-    .botao {
-        width: 90%;
-        height: 6vh; 
-        font-size: 16px;
     }
 }

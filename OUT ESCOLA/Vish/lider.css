@@ -21,9 +21,8 @@ main{
 
     .container-candidatos{
         color: white;
-        display: grid;
-        grid-template-columns: auto auto auto;
-        grid-template-rows: auto auto auto;
+        display: flex;
+        flex-wrap: wrap;
         gap: 2%;
         justify-content: center;
         align-items: center;
@@ -35,7 +34,7 @@ main{
         display: grid;
         grid-template-columns: auto auto auto;
         justify-content: left;
-        padding-left: 5%;
+        padding-left: 1%;
         align-items: center;
         width: 50vh;
         height: 25vh;
@@ -49,13 +48,17 @@ main{
             border-radius: 100%;
         }
 
+        .outro-foto{
+            width: 20vh;
+        }
+
         .text{
             display: grid;
             grid-template-columns: auto;
             padding-left: 10%;
             line-height: 150%;
             h5{
-                font-size: 25px;
+                font-size: 1.6rem;
             }
         }
     }
@@ -67,7 +70,7 @@ main{
         align-items: center;
         overflow: hidden;
 
-        margin: 8% 0% 0% 16%;
+        margin: 8% 0% 0% 15%;
         h5{
             margin-right: 1vh;
         }
@@ -121,17 +124,81 @@ main{
     }
 }
 
+@media only screen and (max-width: 1400px){ 
+    main{
+        .container-candidatos{
+            .candidatos{
+                .text{
+                    h5{
+                        font-size: 1rem;
+                    }
+                    p{
+                        font-size: 0.9em;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*para telefones*/
 @media only screen and (max-width: 800px) {
     main{
-        display: flex;
-        flex-wrap: wrap;
         justify-content: center;
         height: 95vh;
-    }
-    .container-candidatos{
-        display: flex;
-        flex-wrap: nowrap;
         
+        h1{
+            font-size: 23px;
+        }
+
+        .container-candidatos{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            .candidatos{
+                height: 25vh;
+                display: grid;
+                grid-template-columns: auto auto;
+                align-items: center;
+                justify-content: center;
+                padding-bottom: 5%;
+                .foto{
+                    width: 15vh;
+                    height: 15vh;
+                    display: grid;
+                    justify-content: center;
+                    align-items: center;
+
+                    .outro-foto{
+                        width: 15vh;
+                    }
+                }
+                .text{
+                    display: grid;
+                    grid-template-columns: auto;
+                    justify-content: flex-start;
+                    width: 50vw;
+
+                    h5{
+                        font-size: 20px;
+                    }
+                }
+                .vice{
+                    margin-top: 15vh;
+                    margin-left: 55vw;
+                }
+            }
+        }
+
+        .baixo{
+            margin-top: 97vh;
+            padding-bottom: 3vh;
+            
+            .botao{
+                width: 90vw;
+            }
+        }
     }
-    
 }
+

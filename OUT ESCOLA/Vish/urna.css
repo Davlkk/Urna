@@ -86,9 +86,13 @@ main{
 
         p{
             padding: 4%;
-            font-size: 30px;
+            font-size: 33px;
             font-weight: 800;
             color: rgb(101, 101, 101);
+        }
+        .imagem-logo{
+            width: auto;
+            height: 13vh;
         }
     }
 
@@ -199,7 +203,49 @@ main{
     }
 }
 
+@media only screen and (max-width: 1700px){ 
+    main{
+        .urna{
+            .botoes{
+                .cabecalho{
+                    width: 40vh;
+                    .imagem-logo{
+                        width: auto;
+                        height: 10vh;
+                    }
+                    p{
+                        font-size: 25px;
+                    }
+                }
+            }
+        }
+    }
+}
 
+@media only screen and (max-width: 1400px) and (min-width: 800px){ 
+    main{
+        .urna{
+            .tela{
+                .tela2{
+                    .textarea{
+                        width: 18vw;
+                        height: 20vh;
+                    }
+                }
+            }
+            .botoes{
+                .botoes-confirma{
+                    .botao{
+                        font-size: 10px;
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+/*para telefones*/
 @media only screen and (max-width: 800px) {
     body{
         display: flex;

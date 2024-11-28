@@ -20,6 +20,7 @@ function exibirResultados() {
     const resultadosDiv = document.getElementById('resultados');
     const votos = JSON.parse(localStorage.getItem('votos')) || {};
     const votosRegentes = JSON.parse(localStorage.getItem('votosRegentes')) || {};
+    const votosNulos = JSON.parse(localStorage.getItem('votosNulos')) || 0;
 
     let resultadosHTML = '<h2>Candidatos</h2>';
     for (let numero in candidatos) {
@@ -31,12 +32,16 @@ function exibirResultados() {
         resultadosHTML += `<p><strong>${regentes[numero]}</strong> - Código: ${numero} - Votos: ${votosRegentes[numero] || 0}</p>`;
     }
 
+    resultadosHTML += '<h2>Votos Nulos</h2>';
+    resultadosHTML += `<p><strong>Votos Nulos:</strong> ${votosNulos}</p>`;
+
     resultadosDiv.innerHTML = resultadosHTML;
 }
 
-function resetarVotos() {    // Remove os votos
+function resetarVotos() { // Remove os votos
     localStorage.removeItem('votos');
     localStorage.removeItem('votosRegentes');
+    localStorage.removeItem('votosNulos'); // Remove votos nulos
 
     // Atualiza a exibição
     exibirResultados();
